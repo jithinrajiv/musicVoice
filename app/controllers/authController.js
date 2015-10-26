@@ -3,11 +3,19 @@ myApp.controller("authController", function($scope, $firebaseAuth,$firebaseArray
   // create an instance of the authentication service
   var auth = $firebaseAuth(ref);
   // login with Facebook
-  auth.$authWithOAuthPopup("facebook").then(function(authData) {
-    console.log("Logged in as:", authData.uid);
-  }).catch(function(error) {
-    console.log("Authentication failed:", error);
-  });
+
+
+
+ref.authWithOAuthPopup("facebook", function(error, authData) {
+  if (error) {
+    console.log("Login Failed!", error);
+  } else {
+    console.log("Authenticated successfully with payload:", authData);
+  }
+  console.log(authData.facebook.displayName);
+
+  $scope.fName = authData.facebook.displayName;
+});
 
 
   // download the data into a local object

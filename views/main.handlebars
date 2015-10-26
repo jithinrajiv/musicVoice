@@ -1,11 +1,9 @@
- <ul>
       <li ng-repeat="message in messages">
         <!-- edit a message -->
         <input ng-model="message.text" ng-change="messages.$save(message)" />
         <!-- delete a message -->
         <button ng-click="messages.$remove(message)">Delete Message</button>
       </li>
-  </ul>
     <!-- push a new message onto the array -->
     <form ng-submit="addMessage()">
       <input ng-model="newMessageText" />

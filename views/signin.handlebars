@@ -1,3 +1,4 @@
+
   <ul>
       <li ng-repeat="message in messages">
         <!-- edit a message -->
@@ -7,14 +8,11 @@
       </li>
   </ul>
     <!-- push a new message onto the array -->
-    <form ng-submit="addMessage()">
+    <form id="messager"ng-submit="addMessage()">
       <input ng-model="newMessageText" />
       <button type="submit">Add Message</button>
     </form>
     
-<div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
-</div>
+  <div id="userName" ng-model="fName">
+    {[{fName}]}
+  </div>
