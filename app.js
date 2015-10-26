@@ -2,8 +2,7 @@ var express = require('express'),
  app = express(),
  exphbs  = require('express-handlebars'),
  bodyParser = require('body-parser'),
- https = require('https'),
- http = require('http');
+ https = require('https');
 
 
 var config = require('./env.json')[process.env.NODE_ENV || 'development'];
@@ -18,14 +17,13 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/app'));
 app.use(express.static(__dirname + '/views'));
 app.use(express.static(__dirname + '/bower_components'));
-app.use(express.static(__dirname + '/config'));
 
 //config port
 var port = process.env.PORT || 3000;
 
 app.get('/', function (req, res) {
   res.render('landing');
-})
+});
 
 var http = require('http').Server(app);
 

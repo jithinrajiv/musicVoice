@@ -45,7 +45,8 @@ body {
 a {
   color: #4C9CF1;
   text-decoration: none;
-  font-weight: bold; }
+  font-weight: bold;
+  margin-left: 10px; }
 
 a:hover {
   color: #444; }
@@ -71,11 +72,17 @@ header {
   background: url(../img/logo.png) no-repeat center;
   display: block; }
 
+.form-control {
+  width: 50%; }
+
+.signUp {
+  margin-left: 20%; }
+
 nav {
   position: fixed;
   top: 0px;
   width: 100%;
-  height: 73px; }
+  height: 56px; }
 
 #menu-icon {
   display: hidden;
@@ -109,6 +116,16 @@ h1 {
   color: #2262AD;
   line-height: 1.15em;
   margin: 20px 0; }
+
+.desktop-sidebar-search {
+  width: 40%;
+  position: absolute;
+  top: 20px;
+  right: 200px; }
+
+#container {
+  margin-left: 14px;
+  margin-top: 50px; }
 
 p {
   line-height: 1.45em;

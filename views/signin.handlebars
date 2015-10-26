@@ -1,16 +1,22 @@
-<ul>
-      <li ng-repeat="message in messages">
-        <!-- edit a message -->
-        <input ng-model="message.text" ng-change="messages.$save(message)" />
-        <!-- delete a message -->
-        <button ng-click="messages.$remove(message)">Delete Message</button>
-      </li>
-  </ul>
-    <!-- push a new message onto the array -->
-    <form id="messager"ng-submit="addMessage()">
-      <input type="text" ng-model="newMessageText" />
-      <button type="submit">Add Message</button>
-    </form>
+<form role="form" class="signUp" ng-submit="login()">
+    <label for="email">Username:</label>
+    <input ng-model="email" type="email" class="form-control" id="uName">
+    <label for="pwd">Password:</label>
+    <input ng-model="password" type="password" class="form-control" id="pwd">
+
+
+  <div class="checkbox">
+    <label><input type="checkbox"> Remember me</label>
+  </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </div>
+</form>
+
+<div class="form-group signUp">
+  <a href="#/signup">Sign up for free </a>
+  <a href="#/">Forgot Account </a>
+</div>
+
 
   <div id="userName" ng-model="fName">
     {[{fName}]}

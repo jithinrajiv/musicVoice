@@ -1,5 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute','ngAnimate','ui.bootstrap','ngProgress','firebase']);
-
+var myApp = angular.module('myApp', ['ngRoute','ngAnimate','ui.bootstrap','firebase']);
 myApp.config(['$interpolateProvider', function($interpolateProvider){
   // $interpolateProvider used to differentiate uses for angular from express
   $interpolateProvider.startSymbol('{[{'); 
@@ -19,11 +18,15 @@ myApp.config(['$interpolateProvider', function($interpolateProvider){
 				templateUrl : '/main.handlebars',
 				controller  : 'mainController'
 			})
+			.when('/signup', {
+				templateUrl : '/signup.handlebars',
+				controller  : 'signupController'
+			})
 			.when('/music', {
 				templateUrl : '/music.handlebars',
 				controller  : 'musicController'
-
 			});
+
 	});
 
 	// create the controller and inject Angular's $scope

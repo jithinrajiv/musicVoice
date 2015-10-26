@@ -1,6 +1,6 @@
 myApp.controller("musicController", function($scope) {  
 
-  $scope.said='...';
+  $scope.said = '...';
 
   $scope.helloWorld = function() {
     $scope.said = "Hello world!";
@@ -24,6 +24,8 @@ myApp.controller("musicController", function($scope) {
       $scope.$apply($scope.turnon);
     }
   };
+
+  $scope.said = $scope.commandText;
 
   annyang.debug();
   annyang.init($scope.commands);
