@@ -27,13 +27,18 @@ app.get('/', function (req, res) {
   res.render('landing');
 })
 
+var http = require('http').Server(app);
 
-// app.listen(port);
-var server = require('http').createServer(app);
-var io = require('socket.io')(server);
-io.on('connection', function(){ /* … */ });
-server.listen(port);// https.createServer(app).listen(port);
+var io = require('socket.io')(http);
 
-console.log("Server listening on port:", port);
+io.on('connection', function(socket){
+  console.log('a user connected');
+});
+
+http.listen(port, function(){
+  console.log('listening on ',port);
+});
+
+
 
 

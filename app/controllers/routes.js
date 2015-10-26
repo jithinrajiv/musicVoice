@@ -19,9 +19,9 @@ myApp.config(['$interpolateProvider', function($interpolateProvider){
 				templateUrl : '/main.handlebars',
 				controller  : 'mainController'
 			})
-			.when('/dash', {
-				templateUrl : '/dash.handlebars',
-				controller  : 'dashController'
+			.when('/music', {
+				templateUrl : '/music.handlebars',
+				controller  : 'musicController'
 
 			});
 	});

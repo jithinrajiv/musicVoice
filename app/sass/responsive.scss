@@ -26,13 +26,23 @@ nav {
     width: 100%;
     height: 35px;
 }
+
+i{
+    float:left;
+}
 /*input ===========*/
 input{
 	width:100%;
+    height:35px;
+}
+button{
+    width: 100%;
+    height: 28px;
+    margin-top: 6px;
 }
 #container{
-	margin-left:57px;
-    margin-top:45px;
+	margin-left:14px;
+    margin-top:90px;
 }
 #userName {
     color: #000;
@@ -40,6 +50,7 @@ input{
     position: absolute;
     top: 5px;
     right: 11px;
+    z-index:2;
 }
 
 }
