@@ -1,0 +1,26 @@
+{
+  "name": "musicRoom",
+  "version": "0.1.0",
+  "authors": [
+    "jeff_mendez"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7",
+    "angular-socket-io": "~0.7.0",
+    "ngprogress": "~1.1.2",
+    "angular-route": "~1.4.7",
+    "angular-animate": "~1.4.7",
+    "angular-bootstrap": "~0.14.3"
+  }
+}

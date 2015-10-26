@@ -1,0 +1,48 @@
+<!Doctype html>
+<html>
+<head>
+    <title>chatMusic</title>
+    <meta name="description" content="jeff mendez">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="web design, chatMusic, ChatMusic,music with friends">
+    <script src="angular/angular.min.js"></script>
+    <script src="angular-route/angular-route.min.js"></script>
+    <script src="angular-animate/angular-animate.min.js"></script>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src="angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="ngprogress/build/ngprogress.js"></script>
+
+    <link href="css/navbar.min.css" rel="stylesheet" type="text/css">
+    <link href="ngprogress/ngProgress.css" rel="stylesheet" type="text/css">
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script src="controllers/routes.js"></script>
+    <script src="controllers/mainController.js"></script>
+    <link href="css/responsive.min.css" rel="stylesheet">
+    <link href="css/master.min.css" rel="stylesheet">
+    <link href="css/navbar.min.css" rel="stylesheet">
+    
+</head>
+<body ng-app="myApp">
+
+ <div id="wrapper">
+    <!-- Navigation -->
+        <nav>
+            <ul>
+                <li>
+                    Home
+                </li>
+                <li>
+                    Music
+                </li>
+                <li>
+                    Contact
+                </li>
+            </ul>
+        </nav>
+          
+        {{{ body }}}
+
+    </div>
+</body>
+</html>
