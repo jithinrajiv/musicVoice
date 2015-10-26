@@ -32,7 +32,7 @@ app.get('/', function (req, res) {
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 io.on('connection', function(){ /* … */ });
-server.listen(3000);// https.createServer(app).listen(port);
+server.listen(port);// https.createServer(app).listen(port);
 
 console.log("Server listening on port:", port);
 

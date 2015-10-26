@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute','ngAnimate','ui.bootstrap','ngProgress']);
+var myApp = angular.module('myApp', ['ngRoute','ngAnimate','ui.bootstrap','ngProgress','firebase']);
 
 myApp.config(['$interpolateProvider', function($interpolateProvider){
   // $interpolateProvider used to differentiate uses for angular from express
@@ -13,21 +13,21 @@ myApp.config(['$interpolateProvider', function($interpolateProvider){
 			// route for the home page
 			.when('/', {
 				templateUrl : '/signin.handlebars',
+				controller  : 'authController'
+			})
+			.when('/main', {
+				templateUrl : '/main.handlebars',
 				controller  : 'mainController'
 			})
-			.when('/signup', {
-				templateUrl : '/signup.handlebars',
-				controller  : 'mainController'
-			})
-			.when('/rubric', {
-				templateUrl : '/rubric.handlebars',
-				controller  : 'rubricController'
+			.when('/dash', {
+				templateUrl : '/dash.handlebars',
+				controller  : 'dashController'
 
 			});
 	});
 
 	// create the controller and inject Angular's $scope
-	myApp.controller('signinController', function($scope){
+	myApp.controller('mainController', function($scope){
 
 	});
 	myApp.controller('formController', function($scope) {
