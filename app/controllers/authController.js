@@ -25,7 +25,7 @@ ref.authWithOAuthPopup("facebook", function(error, authData) {
 
   $scope.fName = authData.facebook.displayName;
 
-
+  $location.path('/music');
 });
 
 
