@@ -55,6 +55,17 @@ h1{
 .navbar-default .navbar-toggle {
     border-color: rgba(0,0,0,.0);
 }
+
+#border{
+    border-color: white;
+    color:white;
+}
+#border:hover{
+    color:black;
+}
+.navbar-toggle{
+    margin-top:6px;
+}
 .navbar-collapse {
    padding:0px;
 }
@@ -96,7 +107,7 @@ input{
     width:100%;
 }
 #container{
-    margin-top:75px;
+    margin-top:100px;
 }
 .desktop-sidebar-search {
     width: 40%;
@@ -104,7 +115,9 @@ input{
     top: 10px;
     right: 80px;
 }
-
+#secondNav{
+    display:none;
+}
 }
 /*landscape horizonal viewport */
 

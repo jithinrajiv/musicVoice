@@ -1,5 +1,23 @@
-myApp.controller("musicController", function($scope) {  
+myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray,$firebaseObject,$location) {  
 
+  var ref = new Firebase("https://musicwebgl.firebaseIO.com");
+  // create an instance of the authentication service
+  var auth = $firebaseAuth(ref);
+  $scope.authObj = $firebaseAuth(ref);
+  var obj = $firebaseObject(ref);
+
+  var authData = $scope.authObj.$getAuth();
+
+  if (authData) {
+    console.log("Logged in as:", authData.uid);
+  } else {
+    console.log("Logged out");
+  }
+
+// login with Facebook
+  console.log(authData.facebook.displayName);
+
+  $scope.fName = authData.facebook.displayName;
 
 //Text Commands =====================================================
   $scope.said = 'Say a song';
@@ -21,7 +39,6 @@ myApp.controller("musicController", function($scope) {
 
 // Spotify Api=========================================
  var audio = new Audio();
-
 
   $scope.searchTracks = function(query) {
         $.ajax({

@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAAA,SAAS;EACR,UAAU,EAAC,IAAI;;AAEhB,OAAO;EACN,WAAW,EAAC,GAAG;;AAEhB,OAAO;EACN,MAAM,EAAC,eAAe;;AAEvB,eAAe;EACd,WAAW,EAAC,EAAE",
+"sources": ["../sass/master.scss"],
 "names": [],
 "file": "master.css"
 }

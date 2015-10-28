@@ -1,3 +1,13 @@
+[ng-view] {
+  margin-top: 60px; }
 
+.signUp {
+  margin-left: 33%; }
+
+.border {
+  border: 2px solid white; }
+
+#musicContainer {
+  margin-left: 5%; }
 
 /*# sourceMappingURL=master.css.map */
