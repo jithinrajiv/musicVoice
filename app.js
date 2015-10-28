@@ -4,9 +4,6 @@ var express = require('express'),
  bodyParser = require('body-parser'),
  https = require('https');
 
-
-var config = require('./env.json')[process.env.NODE_ENV || 'development'];
-
 //view engine
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 

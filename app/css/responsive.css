@@ -8,15 +8,70 @@
     right: 11px;
     z-index: 2; }
 
+  .submitBtn {
+    width: 100%;
+    margin-top: 5px;
+    height: 45px;
+    border: none;
+    background: #c81432;
+    color: white; }
+
+  .green {
+    background: green; }
+
   h1 {
     text-align: center; }
 
+  /* start of the navbar styling ===================*/
   .nav > li {
     position: relative;
     display: block;
+    background: #3a3a3a;
     width: 100%;
-    text-align: center;
+    /* float: right; */
+    margin-left: 134px;
+    font-size: .7em; }
+
+  .navbar {
+    position: fixed; }
+
+  .navbar-header {
+    background: #3a3a3a; }
+
+  .navbar-default .navbar-brand {
+    color: snow; }
+
+  .navbar-default .navbar-toggle {
+    border-color: transparent; }
+
+  .navbar-collapse {
     padding: 0px; }
+
+  .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: #e7e7e7;
+    width: 80%;
+    height: 100px;
+    float: right;
+    position: fixed; }
+
+  /* reseting boostrap form-controls */
+  .form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border-left: 2px solid #3a3a3a;
+    border-radius: 0px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; }
 
   .signUp {
     width: 90%;
@@ -28,9 +83,12 @@
   input {
     width: 100%; }
 
+  #container {
+    margin-top: 75px; }
+
   .desktop-sidebar-search {
     width: 40%;
-    position: absolute;
+    position: fixed;
     top: 10px;
     right: 80px; } }
 /*landscape horizonal viewport */

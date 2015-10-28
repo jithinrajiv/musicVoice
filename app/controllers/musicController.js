@@ -2,10 +2,11 @@ myApp.controller("musicController", function($scope) {
 
 
 //Text Commands =====================================================
-  $scope.said = '...';
+  $scope.said = 'Say a song';
 
   $scope.helloWorld = function() {
     $scope.said = "Hello world!";
+    $scope.song = "Search for this song called Hello World"
   }
 
   $scope.turnon = function() {
@@ -18,11 +19,11 @@ myApp.controller("musicController", function($scope) {
     $scope.said = "whats up bro";
   }
 
-
 // Spotify Api=========================================
  var audio = new Audio();
 
-    function searchTracks(query) {
+
+  $scope.searchTracks = function(query) {
         $.ajax({
             url: 'https://api.spotify.com/v1/search',
             data: {
@@ -40,24 +41,22 @@ myApp.controller("musicController", function($scope) {
         });
     }
 
-    function playSong(songName, artistName) {
+    $scope.playSong = function (songName, artistName) {
         var query = songName;
         if (artistName) {
             query += ' artist:' + artistName;
         }
-
         searchTracks(query);
     }
-
-    function communicateAction(text) {
+    $scope.communicateAction = function(text) {
         var rec = document.getElementById('conversation');
         rec.innerHTML += '<div class="action">' + text + '</div>';
     }
-
-    function recognized(text) {
+    $scope.recongized = function(text) {
         var rec = document.getElementById('conversation');
         rec.innerHTML += '<div class="recognized"><div>' + text + '</div></div>';
     }
+
 //Siri like Commands 
   $scope.commands = {
     'hello (world)': function() {
@@ -76,10 +75,10 @@ myApp.controller("musicController", function($scope) {
       if (typeof console !== "undefined") console.log('Turn on')
       $scope.$apply($scope.turnon);
     },
-    'stop': function () {
-                audio.pause();
-    },
 //Spotifiy Api track recognitions=================
+    'stop': function () {
+        audio.pause();
+    },
     'play track *song': function (song) {
     recognized('Play track ' + song);
     playSong(song);
@@ -101,7 +100,6 @@ myApp.controller("musicController", function($scope) {
     communicateAction('Sorry, I don\'t understand this action');
   }
   };
-
   annyang.debug();
   annyang.init($scope.commands);
   annyang.start();

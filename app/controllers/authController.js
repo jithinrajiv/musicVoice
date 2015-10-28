@@ -1,9 +1,7 @@
-myApp.controller("authController", function($scope, $firebaseAuth,$firebaseArray,$firebaseObject,$location) {
+myApp.controller("authController", function($scope,$firebaseAuth,$firebaseArray,$firebaseObject,$location) {
   var ref = new Firebase("https://musicwebgl.firebaseIO.com");
   // create an instance of the authentication service
   var auth = $firebaseAuth(ref);
-  // login with Facebook
-
   $scope.authObj = $firebaseAuth(ref);
   var obj = $firebaseObject(ref);
 
@@ -15,6 +13,7 @@ myApp.controller("authController", function($scope, $firebaseAuth,$firebaseArray
     console.log("Logged out");
   }
 
+// login with Facebook
 ref.authWithOAuthPopup("facebook", function(error, authData) {
   if (error) {
     console.log("Login Failed!", error);
