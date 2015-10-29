@@ -1,4 +1,4 @@
-myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray,$firebaseObject,$location) {  
+myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray,$firebaseObject,$location,Spotify) {  
 
   var ref = new Firebase("https://musicwebgl.firebaseIO.com");
   // create an instance of the authentication service
@@ -96,29 +96,69 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
     'stop': function () {
         audio.pause();
     },
-    'play track *song': function (song) {
-    recognized('Play track ' + song);
-    playSong(song);
+    'play track :song': function (song) {
+      $scope.recongized('Play track ' + song);
+      $scope.playSong(song);
     },
-    'play *song by *artist': function (song, artist) {
-    recognized('Play song ' + song + ' by ' + artist);
-    playSong(song, artist);
+    'play :song by :artist': function (song, artist) {
+      $scope.recongized('Play song ' + song + ' by ' + artist);
+      $scope.playSong(song, artist);
+      console.log(song)
     },
-    'play song *song': function (song) {
-    recognized('Play song ' + song);
-    playSong(song);
+    'play song :song': function (song) {
+      $scope.recongized('Play song ' + song);
+      $scope.playSong(song);
+      console.log(song)
+
     },
-    'play *song': function (song) {
-    recognized('Play ' + song);
-    playSong(song);
+    'play :song': function (song) {
+      $scope.recongized('Play ' + song);
+      $scope.playSong(song);
+      console.log(song)
     },
     ':nomatch': function (message) {
-    recognized(message);
-    communicateAction('Sorry, I don\'t understand this action');
+      $scope.recongized(message);
+      $scope.communicateAction('Sorry, I don\'t understand this action');
   }
   };
   annyang.debug();
   annyang.init($scope.commands);
   annyang.start();
+
+
+
+  Spotify.search('Drake', 'artist').then(function (data,$scope) {
+    var audioObject = null;
+    audioObject = new Audio(data.items);
+    console.log(data)
+  });
+
+  Spotify.getTrack("0eGsygTp906u18L0Oimnem").then(function (data) {
+  console.log(data);
+  var audioObject = null;
+  audioObject = new Audio(data.preview_url);
+  audioObject.play();
+  // console.log(data.preview_url)
+});
+
+  // var listid = $stateParams.listid;
+  // var userid = $stateParams.userid;
+
+  // $scope.listname = $stateParams.listname;
+ 
+
+  // $scope.audio = new Audio();
+ 
+  // $scope.tracks = [];
+ 
+  // Spotify.getPlaylist(userid, listid).then(function (data) {
+  //   $scope.tracks = data.tracks.items;
+  // });
+ 
+  // $scope.playTrack = function(trackInfo) {
+  //   $scope.audio.src = trackInfo.track.preview_url;
+  //   $scope.audio.play();
+  // };
+ 
 
 });

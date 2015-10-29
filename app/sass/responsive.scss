@@ -2,13 +2,28 @@ $mainColor : rgba(100,200,200,.4);
 
 $mainColor1 : rgba(100,200,200,.7);
 
-$navbarColor : #3a3a3a;
+$navbarColor : #E7C336;
 
 @media (max-width: 699px) {
  
 }
 /*media Querries */
 @media (max-width: 460px) {
+
+
+.btn-default {
+    color: #fff;
+    background-color: #fff;
+    width: 100%;
+    border-color: #ccc;
+    background: rgba(100,200,40,.8);
+    margin-bottom: 10px;
+    font-weight:bolder;
+    font-size:1em;
+}
+.btn-default:hover{
+    background: white;
+}
 
 #userName {
     color: #000;
@@ -32,12 +47,13 @@ $navbarColor : #3a3a3a;
 }
 h1{
     text-align:center;
+    color: #fff;
 }
 /* start of the navbar styling ===================*/
 .nav > li {
     position: relative;
     display: block;
-    background: #3a3a3a;
+    background: $navbarColor;
     width: 100%;
     /* float: right; */
     margin-left: 134px;
@@ -55,7 +71,9 @@ h1{
 .navbar-default .navbar-toggle {
     border-color: rgba(0,0,0,.0);
 }
-
+.navbar a{
+    color:#fff;
+}
 #border{
     border-color: white;
     color:white;

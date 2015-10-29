@@ -19,12 +19,10 @@ ref.authWithOAuthPopup("facebook", function(error, authData) {
     console.log("Login Failed!", error);
   } else {
     console.log("Authenticated successfully with payload:", authData);
+    $location.path('/music');
   }
   console.log(authData.facebook.displayName);
-
   $scope.fName = authData.facebook.displayName;
-
-  $location.path('/music');
 });
 
 

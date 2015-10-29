@@ -1,8 +1,14 @@
-var myApp = angular.module('myApp', ['ngRoute','ngAnimate','ui.bootstrap','firebase']);
-myApp.config(['$interpolateProvider', function($interpolateProvider){
+var myApp = angular.module('myApp', ['ngRoute','ngAnimate','ui.bootstrap','firebase','spotify']);
+myApp.config(['$interpolateProvider','SpotifyProvider', function($interpolateProvider,SpotifyProvider){
   // $interpolateProvider used to differentiate uses for angular from express
   $interpolateProvider.startSymbol('{[{'); 
   $interpolateProvider.endSymbol('}]}'); 
+
+  SpotifyProvider.setClientId('c8ada474be85485eb7ea62ce64f2ac63');
+  SpotifyProvider.setRedirectUri('http://localhost:3000/#/music');
+  SpotifyProvider.setScope('user-read-private playlist-read-private playlist-modify-private playlist-modify-public');
+  // If you already have an auth token
+  SpotifyProvider.setAuthToken('zoasliu1248sdfuiknuha7882iu4rnuwehifskmkiuwhjg23');
 }])
 
 	// configure our routes

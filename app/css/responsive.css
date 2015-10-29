@@ -1,5 +1,18 @@
 /*media Querries */
 @media (max-width: 460px) {
+  .btn-default {
+    color: #fff;
+    background-color: #fff;
+    width: 100%;
+    border-color: #ccc;
+    background: rgba(100, 200, 40, 0.8);
+    margin-bottom: 10px;
+    font-weight: bolder;
+    font-size: 1em; }
+
+  .btn-default:hover {
+    background: white; }
+
   #userName {
     color: #000;
     font-size: 16px;
@@ -20,13 +33,14 @@
     background: green; }
 
   h1 {
-    text-align: center; }
+    text-align: center;
+    color: #fff; }
 
   /* start of the navbar styling ===================*/
   .nav > li {
     position: relative;
     display: block;
-    background: #3a3a3a;
+    background: #E7C336;
     width: 100%;
     /* float: right; */
     margin-left: 134px;
@@ -36,13 +50,16 @@
     position: fixed; }
 
   .navbar-header {
-    background: #3a3a3a; }
+    background: #E7C336; }
 
   .navbar-default .navbar-brand {
     color: snow; }
 
   .navbar-default .navbar-toggle {
     border-color: transparent; }
+
+  .navbar a {
+    color: #fff; }
 
   #border {
     border-color: white;
@@ -75,7 +92,7 @@
     color: #555;
     background-color: #fff;
     background-image: none;
-    border-left: 2px solid #3a3a3a;
+    border-left: 2px solid #E7C336;
     border-radius: 0px;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);

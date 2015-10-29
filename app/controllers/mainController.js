@@ -9,4 +9,11 @@ myApp.controller("mainController", function($scope, $firebaseArray) {
       text: $scope.newMessageText
     });
   };
+
+  $scope.search = function() {
+    $scope.messages.$search({
+      text: $scope.newMessageText
+    });
+  };
+
 });
