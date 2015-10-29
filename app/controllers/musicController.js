@@ -8,13 +8,7 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
 
   var authData = $scope.authObj.$getAuth();
 
-  if (authData) {
-    console.log("Logged in as:", authData.uid);
-  } else {
-    console.log("Logged out");
-  }
-
-// login with Facebook
+  console.log("Logged in as:", authData.uid);
   console.log(authData.facebook.displayName);
 
   $scope.fName = authData.facebook.displayName;
@@ -65,10 +59,12 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
         }
         searchTracks(query);
     }
+
     $scope.communicateAction = function(text) {
         var rec = document.getElementById('conversation');
         rec.innerHTML += '<div class="action">' + text + '</div>';
     }
+
     $scope.recongized = function(text) {
         var rec = document.getElementById('conversation');
         rec.innerHTML += '<div class="recognized"><div>' + text + '</div></div>';

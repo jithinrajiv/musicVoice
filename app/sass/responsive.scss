@@ -10,13 +10,18 @@ $navbarColor : #E7C336;
 /*media Querries */
 @media (max-width: 460px) {
 
-
+canvas{
+    background:white;
+}
+label{
+    color:#000;
+}
 .btn-default {
     color: #fff;
     background-color: #fff;
     width: 100%;
-    border-color: #ccc;
-    background: rgba(100,200,40,.8);
+    border-color: rgb(80,200,80);
+    background: rgb(80,200,80);
     margin-bottom: 10px;
     font-weight:bolder;
     font-size:1em;
@@ -47,7 +52,7 @@ $navbarColor : #E7C336;
 }
 h1{
     text-align:center;
-    color: #fff;
+    color: #000;
 }
 /* start of the navbar styling ===================*/
 .nav > li {
@@ -118,6 +123,15 @@ h1{
     width:90%;
     margin-left:14px;
 }
+.signUp a {
+    color: $navbarColor;
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+    font-size: 1em;
+    text-align: center;
+}
+
 .form-control{
     width:100%;
 }

@@ -3,9 +3,11 @@ myApp.controller("webGLController", function($scope) {
 	var canvas = document.getElementById("canvas");
 	var gl = canvas.getContext("webgl");
 	console.log(gl);
-	gl.clearColor(0, 0, 0, 1);
-	gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+	// gl.clearColor(0, 0, 0, 1);
+	// gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 	console.log("status check");
+
+	// gl.clearColor(4, 3, 4, 3); white
 
 	// var colorChange = function(){
 	// 	setTimeout(function(){

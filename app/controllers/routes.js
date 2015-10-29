@@ -21,7 +21,7 @@ myApp.config(['$interpolateProvider','SpotifyProvider', function($interpolatePro
 				controller  : 'authController'
 			})
 			.when('/main', {
-				templateUrl : '/main.handlebars',
+				templateUrl : '/message.handlebars',
 				controller  : 'mainController'
 			})
 			.when('/signup', {

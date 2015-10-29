@@ -13,17 +13,28 @@ myApp.controller("authController", function($scope,$firebaseAuth,$firebaseArray,
     console.log("Logged out");
   }
 
-// login with Facebook
-ref.authWithOAuthPopup("facebook", function(error, authData) {
-  if (error) {
-    console.log("Login Failed!", error);
-  } else {
-    console.log("Authenticated successfully with payload:", authData);
-    $location.path('/music');
+  $scope.logout = function() {
+    console.log("check")
+    $scope.authObj.$unauth()
+    console.log("logedout")
+    $location.path('/');
   }
-  console.log(authData.facebook.displayName);
-  $scope.fName = authData.facebook.displayName;
-});
+
+// login with Facebook =========================
+  $scope.fLogin = function() {
+      $scope.authData = null;
+      $scope.error = null;
+  ref.authWithOAuthPopup("facebook", function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  })
+}
+
+
+
 
 
 
