@@ -1,4 +1,4 @@
-myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray,$firebaseObject,$location,Spotify) {  
+myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray,$firebaseObject,$location,Spotify,$http) {  
 
   var ref = new Firebase("https://musicwebgl.firebaseIO.com");
   // create an instance of the authentication service
@@ -20,12 +20,8 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
     $scope.said = "Hello world!";
     $scope.song = "Search for this song called Hello World"
   }
-
   $scope.turnon = function() {
     $scope.said = "turn on";
-  }
-  $scope.play = function() {
-    $scope.said = "play a freaking song";
   }
   $scope.whatsup = function() {
     $scope.said = "whats up bro";
@@ -35,35 +31,39 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
  var audio = new Audio();
 
   $scope.searchTracks = function(query) {
-        $.ajax({
-            url: 'https://api.spotify.com/v1/search',
-            data: {
+      console.log(query);
+        $http.get('https://api.spotify.com/v1/search',{
+            params: {
                 q: query,
                 type: 'track'
-            },
-            success: function (response) {
-                if (response.tracks.items.length) {
-                    var track = response.tracks.items[0];
+              }
+            })
+            .then( function (response) {
+              console.log(response);
+                if (response.data.tracks.items.length) {
+                    var track = response.data.tracks.items[0];
                     audio.src = track.preview_url;
                     audio.play();
-                    communicateAction('<div>Playing ' + track.name + ' by ' + track.artists[0].name + '</div><img width="150" src="' + track.album.images[1].url + '">');
+                    $scope.communicateAction('<div>Playing ' + track.name + ' by ' + track.artists[0].name + '</div><img width="150" src="' + track.album.images[1].url + '">');
                 }
-            }
+            
         });
     }
-
     $scope.playSong = function (songName, artistName) {
         var query = songName;
         if (artistName) {
             query += ' artist:' + artistName;
         }
-        searchTracks(query);
+        $scope.searchTracks(query);
     }
 
     $scope.communicateAction = function(text) {
         var rec = document.getElementById('conversation');
         rec.innerHTML += '<div class="action">' + text + '</div>';
     }
+
+
+    $scope.trySong = $scope.communicateAction;
 
     $scope.recongized = function(text) {
         var rec = document.getElementById('conversation');
@@ -75,10 +75,6 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
     'hello (world)': function() {
       if (typeof console !== "undefined") console.log('hello world!')
       $scope.$apply($scope.helloWorld);
-    },
-    'play a song': function() {
-      if (typeof console !== "undefined") console.log('play a song')
-      $scope.$apply($scope.play);
     },
     'hey': function() {
       if (typeof console !== "undefined") console.log('whats up bro')
@@ -117,10 +113,10 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
       $scope.communicateAction('Sorry, I don\'t understand this action');
   }
   };
+
   annyang.debug();
   annyang.init($scope.commands);
   annyang.start();
-
 
 
   Spotify.search('Drake', 'artist').then(function (data,$scope) {
@@ -129,32 +125,13 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
     console.log(data)
   });
 
-  Spotify.getTrack("0eGsygTp906u18L0Oimnem").then(function (data) {
-  console.log(data);
-  var audioObject = null;
-  audioObject = new Audio(data.preview_url);
-  audioObject.play();
-  // console.log(data.preview_url)
-});
-
-  // var listid = $stateParams.listid;
-  // var userid = $stateParams.userid;
-
-  // $scope.listname = $stateParams.listname;
- 
-
-  // $scope.audio = new Audio();
- 
-  // $scope.tracks = [];
- 
-  // Spotify.getPlaylist(userid, listid).then(function (data) {
-  //   $scope.tracks = data.tracks.items;
-  // });
- 
-  // $scope.playTrack = function(trackInfo) {
-  //   $scope.audio.src = trackInfo.track.preview_url;
-  //   $scope.audio.play();
-  // };
+//   Spotify.getTrack("0eGsygTp906u18L0Oimnem").then(function (data) {
+//   console.log(data);
+//   var audioObject = null;
+//   audioObject = new Audio(data.preview_url);
+//   audioObject.play();
+//   // console.log(data.preview_url)
+// });
  
 
 });

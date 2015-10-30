@@ -7,7 +7,7 @@ body {
 	line-height: 1.25em;
 	font-family: Helvetica Neue, Helvetica, Arial;
 	background: #f9f9f9;
-	color: #555;
+	color: #000;
 }
 
 a {
@@ -18,14 +18,10 @@ a {
 }
 
 a:hover {
-
 	color: #444;
-
 }
 
 img {
-
-	width: 100%;
 
 }
 label{
@@ -158,10 +154,14 @@ h1 {
 .navbar a:hover{
 	color:#226;
 }
+h2{
+	color:black;
+}
 p {
 
 	line-height: 1.45em;
 	margin-bottom: 20px;
+	color:black;
 
 }
 
