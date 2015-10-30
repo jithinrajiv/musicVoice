@@ -63,6 +63,9 @@ header {
   border-bottom: 4px solid #4C9CF1;
   z-index: 100; }
 
+#musicShare {
+  margin-left: 45%; }
+
 #logo {
   margin: 20px;
   float: left;

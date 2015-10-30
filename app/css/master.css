@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: inherit;
   font-weight: 500;
   line-height: 1.1;
-  color: white; }
+  color: black; }
 
 /* webGl full screenSize */
 canvas {
@@ -28,7 +28,6 @@ canvas {
   top: 0;
   width: 100%;
   z-index: -1;
-  height: 100%;
-  background: black; }
+  height: 100%; }
 
 /*# sourceMappingURL=master.css.map */

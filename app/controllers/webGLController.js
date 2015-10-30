@@ -10,7 +10,9 @@ myApp.controller("webGLController", function($scope) {
 
 	var color = gl.clearColor(.7, .4, .4, .4);
 	var color1 =  gl.clearColor(.3, .8, .7, .6)
-
+ 		gl.clearColor(1, 1, 1, 1);
+    	gl.enable(gl.DEPTH_TEST);
+		gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
 	$scope.colorChange = function(){
  		gl.clearColor(1, 1, 1, 1);
@@ -27,7 +29,6 @@ myApp.controller("webGLController", function($scope) {
 
 	};
 
-
 	var random = Math.random();
 	$scope.colorChange1 = function(){
  		gl.clearColor(random, random, random, 1.0);
@@ -40,11 +41,10 @@ myApp.controller("webGLController", function($scope) {
 		h1.style.color = '#fff';
 		h2.style.color = '#fff';
 		tag.style.color = '#fff';
-
 	};
 
 	$scope.colorChange2 = function(){
- 		gl.clearColor(0.4, 0.5, 0.2, 1.0);
+ 		gl.clearColor(0.4, 0.3, 0.2, 0.7);
     	gl.enable(gl.DEPTH_TEST);
 		gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 		console.log("colorChange1");
