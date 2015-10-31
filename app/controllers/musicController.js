@@ -72,38 +72,28 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
 
 //Siri like Commands 
   $scope.commands = {
-    'hello (world)': function() {
-      if (typeof console !== "undefined") console.log('hello world!')
-      $scope.$apply($scope.helloWorld);
-    },
-    'hey': function() {
-      if (typeof console !== "undefined") console.log('whats up bro')
-      $scope.$apply($scope.whatsup);
-    },
-    'turn on': function() {
-      if (typeof console !== "undefined") console.log('Turn on')
-      $scope.$apply($scope.turnon);
-    },
 //Spotifiy Api track recognitions=================
     'stop': function () {
         audio.pause();
     },
-    'play track :song': function (song) {
+    'play': function () {
+        audio.play();
+    },
+    'play track *song': function (song) {
       $scope.recongized('Play track ' + song);
       $scope.playSong(song);
     },
-    'play :song by :artist': function (song, artist) {
+    'play *song by *artist': function (song, artist) {
       $scope.recongized('Play song ' + song + ' by ' + artist);
       $scope.playSong(song, artist);
       console.log(song)
     },
-    'play song :song': function (song) {
+    'play song *song': function (song) {
       $scope.recongized('Play song ' + song);
       $scope.playSong(song);
       console.log(song)
-
     },
-    'play :song': function (song) {
+    'play *:song': function (song) {
       $scope.recongized('Play ' + song);
       $scope.playSong(song);
       console.log(song)
@@ -118,6 +108,9 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
   annyang.init($scope.commands);
   annyang.start();
 
+ annyang.addCallback('error', function () {
+        $scope.communicateAction('error');
+    });
 
   Spotify.search('Drake', 'artist').then(function (data,$scope) {
     var audioObject = null;
