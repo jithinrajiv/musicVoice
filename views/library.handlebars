@@ -1,0 +1,21 @@
+  <h1>Library</h1>
+
+  <div id="containLib">
+    <ul>
+        <li ng-repeat="message in messages">
+          <!-- edit a message -->
+          <h2 ng-model="message.text" ng-change="messages.$save(message)">{[{message.text}]}</h2>
+          <!-- delete a message -->
+          <button class="submitBtn" ng-click="messages.$remove(message)">Delete Song</button>
+        </li>
+    </ul>
+  </div>
+
+
+<div id="messageBox">
+  <!-- push a new message onto the array -->
+  <form id="messager"ng-submit="addMessage()">
+    <input type="text" ng-model="newMessageText" placeholder="add a song to your library"/>
+    <button class="submitBtn green" type="submit">Add Song</button>
+  </form>
+</div>

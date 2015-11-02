@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute','ngAnimate','ui.bootstrap','firebase','spotify']);
+var myApp = angular.module('myApp', ['ngRoute','ngAnimate','firebase','spotify']);
 myApp.config(['$interpolateProvider','SpotifyProvider', function($interpolateProvider,SpotifyProvider){
   // $interpolateProvider used to differentiate uses for angular from express
   $interpolateProvider.startSymbol('{[{'); 
@@ -27,6 +27,10 @@ myApp.config(['$interpolateProvider','SpotifyProvider', function($interpolatePro
 			.when('/signup', {
 				templateUrl : '/signup.handlebars',
 				controller  : 'signupController'
+			})
+			.when('/lib', {
+				templateUrl : '/library.handlebars',
+				controller  : 'libController'
 			})
 			.when('/music', {
 				templateUrl : '/music.handlebars',

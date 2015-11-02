@@ -1,19 +1,23 @@
-myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray,$firebaseObject,$location,Spotify,$http) {  
+myApp.controller("libController", function($scope,$firebaseAuth,$firebaseArray,$firebaseObject,$location,Spotify,$http) {  
 
-  var ref = new Firebase("https://musicwebgl.firebaseIO.com");
-  // create an instance of the authentication service
-  var auth = $firebaseAuth(ref);
-  $scope.authObj = $firebaseAuth(ref);
-  var obj = $firebaseObject(ref);
+ 
+var ref = new Firebase("https://musicwebgl.firebaseIO.com");
+  // download the data into a local object
+  $scope.messages = $firebaseArray(ref);
+  // add new items to the array
+  // the message is automatically added to our Firebase database!
+  $scope.addMessage = function() {
+    $scope.messages.$add({
+      text: $scope.newMessageText
+    });
+  };
 
-  var authData = $scope.authObj.$getAuth();
-
-  console.log("Logged in as:", authData.uid);
-  console.log(authData.facebook.displayName);
-
-//Facebook username
-  $scope.fName = authData.facebook.displayName;
-
+  $scope.search = function() {
+    $scope.messages.$search({
+      text: $scope.newMessageText
+    });
+  };
+  
 //Text Commands =====================================================
   $scope.said = "Say the word 'play' then the name of your song";
 
@@ -77,12 +81,6 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
     'stop': function () {
         audio.pause();
     },
-    'stop song': function () {
-        audio.pause();
-    },
-    'stop track': function () {
-        audio.pause();
-    },
     'play': function () {
         audio.play();
     },
@@ -115,9 +113,9 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
   annyang.init($scope.commands);
   annyang.start();
 
- annyang.addCallback('error', function () {
-        $scope.communicateAction('error');
-    });
+  annyang.addCallback('error', function () {
+    $scope.communicateAction('error');
+  });
 
   Spotify.search('Drake', 'artist').then(function (data,$scope) {
     var audioObject = null;

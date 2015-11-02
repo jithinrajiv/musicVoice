@@ -7,9 +7,6 @@ button#facebook {
 label {
   color: #fff; }
 
-[ng-view] {
-  margin-top: 60px; }
-
 .signUp {
   margin-left: 33%; }
 

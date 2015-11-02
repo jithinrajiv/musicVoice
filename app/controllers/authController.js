@@ -22,21 +22,13 @@ myApp.controller("authController", function($scope,$firebaseAuth,$firebaseArray,
 
 // login with Facebook =========================
   $scope.fLogin = function() {
-      $scope.authData = null;
-      $scope.error = null;
-  ref.authWithOAuthPopup("facebook", function(error, authData) {
-    if (error) {
-      console.log("Login Failed!", error);
-    } else {
-      console.log("Authenticated successfully with payload:", authData);
-    }
-  })
+  auth.$authWithOAuthPopup("facebook").then(function(authData) {
+    console.log("Logged in as:", authData.uid);
+    $location.path('/music');
+  }).catch(function(error) {
+    console.log("Authentication failed:", error);
+  });
 }
-
-
-
-
-
 
   $scope.login = function() {
     $scope.authObj.$authWithPassword({
@@ -44,10 +36,10 @@ myApp.controller("authController", function($scope,$firebaseAuth,$firebaseArray,
       password: $scope.password
     }).then(function(authData) {
       console.log("Logged in as:", authData.uid);
+      $location.path('/music');
     }).catch(function(error) {
       console.error("Authentication failed:", error);
     });
-    $location.path('/music');
   }
 
 
