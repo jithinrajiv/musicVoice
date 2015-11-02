@@ -16,6 +16,9 @@
     float: none;
     padding-left: 0px; }
 
+  .form-group a {
+    margin-left: 0%; }
+
   #messager input {
     margin-top: 20px; }
 

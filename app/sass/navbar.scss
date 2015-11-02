@@ -12,7 +12,7 @@ body {
 
 a {
 
-	color: #fff;
+	color: #000;
 	text-decoration: none;
 	font-weight: bold;
 }
@@ -21,11 +21,21 @@ a:hover {
 	color: #444;
 }
 
-img {
-
+.btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    width: 471px;
+    margin-top: 12px;
+    height: 45px;
+}
+.form-group a{
+	margin-left:19%;
+	margin-top:20px;
+	display:block;
 }
 label{
-	color:#fff;
+	color:#000;
 }
 header {
 
@@ -39,8 +49,10 @@ header {
 	z-index: 100;
 
 }
+/* the logo */
 #musicShare{
 	margin-left:45%;
+	margin-top: 14px;
 }
 #logo{
 
@@ -84,12 +96,10 @@ a:hover#menu-icon {
 }
 
 ul {
-
 	list-style: none;
-
 }
 
-li {
+nav li {
 	float:left;
 	display: inline-block;
 }
@@ -102,6 +112,14 @@ li {
 
 }
 
+.containLib{
+	width: 100%;
+    overflow: auto;
+    height: 100%;
+}
+.containLib li{
+width:200px;
+}
 section {
 
 	margin: 80px auto 40px;
