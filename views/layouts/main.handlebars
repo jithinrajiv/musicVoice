@@ -97,22 +97,21 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav">
+                       <li class="divider"></li>
                         <li>
-                            <a href="#/music" ng-click=""><i class="fa fa-edit fa-fw"></i>Artist</a>
+                            <a href="#/music" ng-click="ToggleNav = !ToggleNav"><i class="fa fa-edit fa-fw"></i> MusicRoom</a>
                         </li>
 
+
+                        <li class="divider"></li>
                         <li>
-                            <a href="#/main" ng-click=""><i class="fa fa-dashboard fa-fw"></i>Songs</a>
+                            <a href="#/main" ng-click="ToggleNav = !ToggleNav"><i class="fa fa-dashboard fa-fw"></i>Chat</a>
                         </li>
 
+                        <li class="divider"></li>
                         <li>
-                            <a href="#/main" ng-click=""><i class="fa fa-dashboard fa-fw"></i>Find More</a>
+                            <a href="#/lib" ng-click="ToggleNav = !ToggleNav"><i class="fa fa-dashboard fa-fw"></i>Library</a>
                         </li>
-
-                        <li>
-                            <a href="#/main" ng-click=""><i class="fa fa-dashboard fa-fw"></i>Discover</a>
-                        </li>                        
-
                     </ul>
                 </div>
             </div>
