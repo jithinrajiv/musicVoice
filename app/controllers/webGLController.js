@@ -7,6 +7,9 @@ myApp.controller("webGLController", function($scope) {
 
 	console.log(gl);
 	console.log("status check");
+	var h1 = document.querySelector("h1");
+	var tag = document.querySelector("label");
+	var h2 = document.querySelector("h2");
 
 	var color = gl.clearColor(.7, .4, .4, .4);
 	var color1 =  gl.clearColor(.3, .8, .7, .6)
@@ -19,10 +22,7 @@ myApp.controller("webGLController", function($scope) {
     	gl.enable(gl.DEPTH_TEST);
 		gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 		console.log("colorChange1");
-	var h1 = document.querySelector("h1");
-	var tag = document.querySelector("label");
-	var h2 = document.querySelector("h2");
-
+	
 	h1.style.color = '#000';
 	h2.style.color = '#000';
 	tag.style.color = '#000';
@@ -35,9 +35,6 @@ myApp.controller("webGLController", function($scope) {
     	gl.enable(gl.DEPTH_TEST);
 		gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 		console.log("colorChange1");
-		var h1 = document.querySelector("h1");
-		var tag = document.querySelector("label");
-		var h2 = document.querySelector("h2");
 		h1.style.color = '#fff';
 		h2.style.color = '#fff';
 		tag.style.color = '#fff';
@@ -48,16 +45,14 @@ myApp.controller("webGLController", function($scope) {
     	gl.enable(gl.DEPTH_TEST);
 		gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 		console.log("colorChange1");
-		var h1 = document.querySelector("h1");
-		var tag = document.querySelector("label");
-		var h2 = document.querySelector("h2");
 		h1.style.color = '#fff';
 		h2.style.color = '#fff';
 		tag.style.color = '#fff';
 	};
 
 
-    $scope.loadShaderFromDOM = function(id) {
+    $scope.loadShaderFromDOM = function(id){
+        
           
     }
 })

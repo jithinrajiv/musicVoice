@@ -15,7 +15,7 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
   $scope.fName = authData.facebook.displayName;
 
 //Text Commands =====================================================
-  $scope.said = "Say the word 'play' then the name of your song";
+  $scope.said = "Say the word 'play' then the name of your song or artist to start";
 
   $scope.helloWorld = function() {
     $scope.said = "Hello world!";
@@ -46,8 +46,7 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
                     audio.src = track.preview_url;
                     audio.play();
                     $scope.communicateAction('<div>Playing ' + track.name + ' by ' + track.artists[0].name + '</div><img width="150" src="' + track.album.images[1].url + '">');
-                }
-            
+                } 
         });
     }
     $scope.playSong = function (songName, artistName) {
@@ -67,7 +66,7 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
     $scope.trySong = $scope.communicateAction;
 
     $scope.recongized = function(text) {
-        var rec = document.getElementById('conversation');
+        var rec = document.getElementById('recongized');
         rec.innerHTML += '<div class="recognized"><div>' + text + '</div></div>';
     }
 
@@ -111,13 +110,15 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
   }
   };
 
-  annyang.debug();
-  annyang.init($scope.commands);
-  annyang.start();
+  $scope.annyang = annyang;
 
- annyang.addCallback('error', function () {
-        $scope.communicateAction('error');
-    });
+  $scope.annyang.debug();
+  $scope.annyang.init($scope.commands);
+  $scope.annyang.start();
+
+  ($scope.annyang.addCallback = function(error) {
+        $scope.communicateAction(error,'delayed');
+  });
 
   Spotify.search('Drake', 'artist').then(function (data,$scope) {
     var audioObject = null;
