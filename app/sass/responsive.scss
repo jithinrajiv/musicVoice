@@ -30,6 +30,10 @@ h1{
     margin-left:0%;
 }
 
+
+#sidebar{
+    margin-top:80px;
+}
 #messager input{
     margin-top:20px;
 }
@@ -37,12 +41,10 @@ h1{
     margin-top:20px;
     text-align:center;
 }
-#musicShare{
-    padding-left:35%;
-    margin-left:0px;
-    padding-top: 5%;
-    padding-right:5%;
 
+#musicShare{
+    margin-left:35%;
+    padding-top: 5%;
 }
 #conversation{
     text-align:center;
@@ -51,14 +53,42 @@ label{
     color:$navbarColor;
 }
 
-#miniMenu{
-    width: 100%;
+#miniMenu {
     height: 50px;
-    background: lightcoral;
-    text-align:center;
+    width: 15%;
+    background: #f08080;
+    float: right;
 }
 
 
+/* glpyh icons */
+.glyphicon {
+    position: absolute;
+    top: 11px;
+    color:#fff;
+    right:20px;
+    font-size:1.4em;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.glyphicon-th-list{
+    position: absolute;
+    top: 65px;
+    right: 15px;
+    z-index: 99999;
+}
+
+
+
+.glyphicon-th-list:hover{
+    color:gold;
+}
 .btn-default {
     color: #fff;
     background-color: #fff;
@@ -161,6 +191,13 @@ h1,h2,h3,h4{
     -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+p {
+    line-height: 1.49em;
+    background: cornflowerblue;
+    color: white;
+    margin-bottom: auto;
+    padding-left:16px;
 }
 .signUp{
     width:90%;

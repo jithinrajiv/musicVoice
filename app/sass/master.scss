@@ -1,5 +1,34 @@
-
 @import url(https://fonts.googleapis.com/css?family=Merriweather+Sans);
+
+/* keyframe animation for the logo */
+@keyframes hideshow {
+  0% { opacity: 1; }
+  10% { opacity: 0; }
+  30% { opacity: .5; }
+  100% { opacity: 1; }
+} 
+@keyframes kaboom {
+  50% {
+    transform: scale(1.0);
+  }
+  100% {
+    transform: scale(1.4);
+  }
+}
+@keyframes popup {
+  0% {
+    transform: translateY(150px);
+  }
+  34% {
+    transform: translateY(20px);
+  }
+  37% {
+    transform: translateY(150px);
+  }
+  100% {
+    transform: translateY(150px);
+  }
+}
 
 
 button#facebook {
@@ -8,10 +37,13 @@ button#facebook {
     background-image: url(https://icons.iconarchive.com/icons/danleech/simple/512/facebook-icon.png);
 }
 
+#musicShare{
+
+    animation: kaboom 5s ease alternate infinite,hideshow 5s ease alternate infinite;
+}
 label{
 	color:#fff;
 }
-
 .signUp{
 	margin-left:33%;
 }

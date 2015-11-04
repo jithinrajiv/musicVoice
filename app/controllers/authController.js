@@ -12,6 +12,7 @@ myApp.controller("authController", function($scope,$firebaseAuth,$firebaseArray,
   } else {
     console.log("Logged out");
   }
+  $scope.fName = ',' + " " + authData.facebook.displayName;
 
   $scope.logout = function() {
     console.log("check")

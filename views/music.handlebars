@@ -1,20 +1,18 @@
-<div id="miniMenu">
-  <form>
+<div id="miniMenu" ng-click="ToggleBar = !ToggleBar">
+ <span class="glyphicon glyphicon-th-list"></span>
+  <div id="sidebar" ng-show="ToggleBar">
     <button  ng-click="colorChange()" class="submitBtn" type="submit">White</button>
 
     <button  ng-click="colorChange2()" class="submitBtn" type="submit">Brown</button>
 
     <button  ng-click="colorChange1()" class="submitBtn" type="submit">Random</button>
-  </form>
+  </div>
 </div>
-
-
 
 <!-- Talk reconigition -->
 <div id="musicContainer">
-      <h1>Hey:{[{fName}]}</h1>
-      <h2>{[{said}]}</h2>
-<!--       <h3>{[{song}]}</h3>
+      <p>{[{said}]}</p>
+<!--       <p>{[{song}]}</p>
  --></div>
 
 <div ng-model="recongized" id="conversation">

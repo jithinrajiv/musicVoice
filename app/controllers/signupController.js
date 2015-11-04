@@ -3,9 +3,8 @@ myApp.controller("signupController", function($scope, $firebaseAuth,$firebaseObj
 	// create an instance of the authentication service
 	$scope.authObj = $firebaseAuth(ref);
 	var obj = $firebaseObject(ref);
-
+	
 	$scope.addPerson = function() {
-
 		$scope.authObj.$createUser({
 		  email: $scope.email,
 		  password: $scope.password
@@ -18,6 +17,7 @@ myApp.controller("signupController", function($scope, $firebaseAuth,$firebaseObj
 		  });
 		}).then(function(authData) {
 		  console.log("Logged in as:", authData.uid);
+		  $location.path('/music');
 		}).catch(function(error) {
 		  console.error("Error: ", error);
 		});

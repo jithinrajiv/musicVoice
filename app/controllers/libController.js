@@ -1,6 +1,4 @@
 myApp.controller("libController", function($scope,$firebaseAuth,$firebaseArray,$firebaseObject,$location,Spotify,$http) {  
-
- 
 var ref = new Firebase("https://musicwebgl.firebaseIO.com");
   // download the data into a local object
   $scope.messages = $firebaseArray(ref);
@@ -20,17 +18,6 @@ var ref = new Firebase("https://musicwebgl.firebaseIO.com");
   
 //Text Commands =====================================================
   $scope.said = "Say the word 'play' then the name of your song";
-
-  $scope.helloWorld = function() {
-    $scope.said = "Hello world!";
-    $scope.song = "Search for this song called Hello World"
-  }
-  $scope.turnon = function() {
-    $scope.said = "turn on";
-  }
-  $scope.whatsup = function() {
-    $scope.said = "whats up bro";
-  }
 
 // Spotify Api=========================================
  var audio = new Audio();
