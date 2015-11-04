@@ -1,0 +1,80 @@
+@import url(https://fonts.googleapis.com/css?family=Merriweather+Sans);
+
+/* keyframe animation for the logo */
+@keyframes hideshow {
+  0% { opacity: 1; }
+  10% { opacity: 0; }
+  30% { opacity: .5; }
+  100% { opacity: 1; }
+} 
+@keyframes kaboom {
+  50% {
+    transform: scale(1.0);
+  }
+  100% {
+    transform: scale(1.4);
+  }
+}
+@keyframes popup {
+  0% {
+    transform: translateY(150px);
+  }
+  34% {
+    transform: translateY(20px);
+  }
+  37% {
+    transform: translateY(150px);
+  }
+  100% {
+    transform: translateY(150px);
+  }
+}
+
+
+button#facebook {
+    border-color: #2d5073;
+    background-color: #3b5998;
+    background-image: url(https://icons.iconarchive.com/icons/danleech/simple/512/facebook-icon.png);
+}
+
+#musicShare{
+
+    animation: kaboom 5s ease alternate infinite,hideshow 5s ease alternate infinite;
+}
+label{
+	color:#fff;
+}
+.signUp{
+	margin-left:33%;
+}
+.border{
+	border:2px solid white;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: Merriweather;
+    font-weight: 500;
+    line-height: 1.1;
+    color: black;
+}
+/* webGl full screenSize */
+
+canvas{
+	position:fixed;
+	top:0;
+	width:100%;
+	z-index:-1;
+	height:100%;
+	min-height:100%;
+}
+
+#album{
+    width:100%;
+    padding-top:40px;
+    height:350px;
+    text-align: center;
+}
+.recognized{
+    text-align: center;
+    color:black;
+}
