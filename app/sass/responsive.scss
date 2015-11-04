@@ -199,6 +199,23 @@ p {
     margin-bottom: auto;
     padding-left:16px;
 }
+#album{
+    width: 100%;
+    padding-top: 40px;
+    height: 350px;
+    font-weight: 200;
+    font-variant: small-caps;
+}
+#album img{
+    width: 60%;
+    height: 250px;
+    margin-top: 20px;
+}
+.recognized{
+    text-align: center;
+    color:gold;
+    font-size:1.5em;
+}
 .signUp{
     width:90%;
     margin-left:14px;

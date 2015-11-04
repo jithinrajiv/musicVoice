@@ -55,4 +55,14 @@ canvas {
   height: 100%;
   min-height: 100%; }
 
+#album {
+  width: 100%;
+  padding-top: 40px;
+  height: 350px;
+  text-align: center; }
+
+.recognized {
+  text-align: center;
+  color: black; }
+
 /*# sourceMappingURL=master.css.map */

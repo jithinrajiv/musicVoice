@@ -5,8 +5,7 @@ myApp.controller("webGLController", function($scope) {
 	var buffer = gl.createBuffer();
 	var texture = gl.createTexture();
 
-	console.log(gl);
-	console.log("status check");
+	
 	var h1 = document.querySelector("h1");
 	var tag = document.querySelector("label");
 	var h2 = document.querySelector("h2");

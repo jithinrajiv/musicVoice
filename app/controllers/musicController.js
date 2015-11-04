@@ -41,7 +41,14 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
                     var track = response.data.tracks.items[0];
                     audio.src = track.preview_url;
                     audio.play();
-                    $scope.communicateAction('<div>Playing ' + track.name + ' by ' + track.artists[0].name + '</div><img width="150" src="' + track.album.images[1].url + '">');
+                    // $scope.communicateAction('<div>Playing ' + track.name + ' by ' + track.artists[0].name + '</div><img width="150" src="' + track.album.images[1].url + '">');
+                    console.log(track.album.images[1].url)
+
+                    $scope.album = track.album.images[1].url;
+
+                    var albumCover = document.getElementById('album');
+                    albumCover.innerHTML = '<div>Playing ' + track.name + ' by ' + track.artists[0].name + '</div><img src="' + track.album.images[1].url + '">';
+                    console.log(albumCover)
                 } 
         });
     }
@@ -55,7 +62,7 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
 
     $scope.communicateAction = function(text) {
         var rec = document.getElementById('conversation');
-        rec.innerHTML += '<div class="action">' + text + '</div>';
+        rec.innerHTML = '<div class="action">' + text + '</div>';
     }
 
 
@@ -63,7 +70,7 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
 
     $scope.recongized = function(text) {
         var rec = document.getElementById('recongized');
-        rec.innerHTML += '<div class="recognized"><div>' + text + '</div></div>';
+        rec.innerHTML = '<div class="recognized"><div>' + text + '</div></div>';
     }
 
 //Siri like Commands 
@@ -116,11 +123,11 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
         $scope.communicateAction(error,'delayed');
   });
 
-  Spotify.search('Drake', 'artist').then(function (data,$scope) {
-    var audioObject = null;
-    audioObject = new Audio(data.items);
-    console.log(data)
-  });
+  // Spotify.search('Drake', 'artist').then(function (data,$scope) {
+  //   var audioObject = null;
+  //   audioObject = new Audio(data.items);
+  //   console.log(data)
+  // });
 
 //   Spotify.getTrack("0eGsygTp906u18L0Oimnem").then(function (data) {
 //   console.log(data);
