@@ -240,7 +240,8 @@ h2 {
 p {
   line-height: 1.45em;
   margin-bottom: 20px;
-  color: black; }
+  color: black;
+  text-align: center; }
 
 #messager {
   float: left;
