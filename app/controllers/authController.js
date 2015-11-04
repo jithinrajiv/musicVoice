@@ -25,12 +25,11 @@ myApp.controller("authController", function($scope,$firebaseAuth,$firebaseArray,
   auth.$authWithOAuthPopup("facebook").then(function(authData) {
     console.log("Logged in as:", authData.uid);
     $location.path('/music');
-    $scope.fName = ',' + " " + authData.facebook.displayName;
-
   }).catch(function(error) {
     console.log("Authentication failed:", error);
   });
 }
+  $scope.fName = ',' + " " + authData.facebook.displayName;
 
   $scope.login = function() {
     $scope.authObj.$authWithPassword({
