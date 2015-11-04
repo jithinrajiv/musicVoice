@@ -8,11 +8,7 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
 
   var authData = $scope.authObj.$getAuth();
 
-  console.log("Logged in as:", authData.uid);
-  console.log(authData.facebook.displayName);
-
 //Facebook username
-  $scope.fName = authData.facebook.displayName;
 
 //Text Commands =====================================================
   $scope.said = "Say the word 'play' then the name of your song or artist to start";
