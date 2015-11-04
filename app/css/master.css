@@ -63,6 +63,7 @@ canvas {
 
 .recognized {
   text-align: center;
-  color: black; }
+  color: black;
+  margin-top: 10px; }
 
 /*# sourceMappingURL=master.css.map */
