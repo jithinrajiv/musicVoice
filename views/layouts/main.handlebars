@@ -82,7 +82,7 @@
                         </li>
                         <li class="divider"></li>
                         <li data-ng-if="!authData" ng-controller="authController" >
-                            <a href="" ng-click="logout()"><i class="fa fa-user fa-fw"></i> Logout {[{fName}]}</a>
+                            <a href="" ng-click="logout()"ng-model="fName"><i class="fa fa-user fa-fw"></i> Logout {[{fName}]}</a>
                         </li>
 
 
