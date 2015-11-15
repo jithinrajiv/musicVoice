@@ -78,11 +78,9 @@
                         <li><a href="#/signup" ng-click="ToggleNav = !ToggleNav"><i class="fa fa-sign-out fa-fw"></i> Sign Up</a>
                         </li>
                         <li class="divider"></li>
-                        <li data-ng-if="!authData" ng-controller="authController" >
-                            <a href="" ng-click="logout()"><i class="fa fa-user fa-fw"></i> Logout {[{fName}]}</a>
+                        <li data-ng-if="!authData" ng-controller="authController">
+                            <a href="" ng-click="logout()"><i class="fa fa-user fa-fw"></i> Logout</a>
                         </li>
-
-
                     </ul>
                 </div>
             </div>
