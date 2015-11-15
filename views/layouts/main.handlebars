@@ -42,9 +42,6 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <button type="button" id="border" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    Start Playlist
-                </button>
                 <a class="navbar-brand" href="#/">
                MusicVoice</a>
             </div>
@@ -82,7 +79,7 @@
                         </li>
                         <li class="divider"></li>
                         <li data-ng-if="!authData" ng-controller="authController" >
-                            <a href="" ng-click="logout()"ng-model="fName"><i class="fa fa-user fa-fw"></i> Logout {[{fName}]}</a>
+                            <a href="" ng-click="logout()"><i class="fa fa-user fa-fw"></i> Logout {[{fName}]}</a>
                         </li>
 
 

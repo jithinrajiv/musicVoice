@@ -7,7 +7,6 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
   var obj = $firebaseObject(ref);
 
   $scope.authData = $scope.authObj.$getAuth();
-  console.log($scope.authData)
 
 //Facebook username
 
@@ -117,12 +116,18 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
   $scope.annyang = annyang;
 
   $scope.annyang.debug();
-  $scope.annyang.init($scope.commands);
-  $scope.annyang.start();
 
-  ($scope.annyang.addCallback = function(error) {
-        $scope.communicateAction(error,'delayed');
-  });
+
+  $scope.listen = function() {
+      $scope.annyang.init($scope.commands);
+      $scope.annyang.start();
+
+      ($scope.annyang.addCallback = function(error) {
+            $scope.communicateAction(error,'delayed');
+      });
+
+    }
+  
 
   // Spotify.search('Drake', 'artist').then(function (data,$scope) {
   //   var audioObject = null;

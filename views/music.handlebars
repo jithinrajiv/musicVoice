@@ -3,17 +3,18 @@
   <div id="sidebar" ng-show="ToggleBar">
     <button  ng-click="colorChange()" class="submitBtn" type="submit">White</button>
 
-    <button  ng-click="colorChange2()" class="submitBtn" type="submit">Brown</button>
+    <button ng-click="colorChange2()" class="submitBtn" type="submit">Brown</button>
 
-    <button  ng-click="colorChange1()" class="submitBtn" type="submit">Random</button>
+    <button ng-click="colorChange1()" class="submitBtn" type="submit">Random</button>
   </div>
 </div>
 
 <!-- Talk reconigition -->
 <div id="musicContainer" ng-model="authData">
-      <p>{[{$scope.authData.password.email}]}</p>
-      
+      <p>{[{authData.password.email || authData.facebook.displayName}]}</p>
 </div>
+
+<button id="listen" ng-click="listen()">Listen to your voice</button>
 <div id="album" ng-model="recongized"></div>
 <div ng-model="recongized" id="conversation"></div>
 <div ng-model="recongized" id="recongized"></div>
