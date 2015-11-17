@@ -3,27 +3,17 @@
   canvas {
     background: white; }
 
-  li {
-    width: 100%; }
-
-  h1 {
-    margin-top: 10px; }
-
   #containLib {
     text-align: center; }
 
   #messager {
     float: none;
     padding-left: 0px; }
+    #messager input {
+      margin-top: 20px; }
 
   .form-group a {
     margin-left: 0%; }
-
-  #sidebar {
-    margin-top: 80px; }
-
-  #messager input {
-    margin-top: 20px; }
 
   #messageBox {
     margin-top: 20px;
@@ -59,15 +49,13 @@
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; }
-
-  .glyphicon-th-list {
-    position: absolute;
-    top: 65px;
-    right: 15px;
-    z-index: 99999; }
-
-  .glyphicon-th-list:hover {
-    color: gold; }
+    .glyphicon .th-list {
+      position: absolute;
+      top: 65px;
+      right: 15px;
+      z-index: 99999; }
+    .glyphicon:hover {
+      color: gold; }
 
   .btn-default {
     color: #fff;
@@ -78,9 +66,8 @@
     margin-bottom: 10px;
     font-weight: bolder;
     font-size: 1em; }
-
-  .btn-default:hover {
-    background: white; }
+    .btn-default:hover {
+      background: white; }
 
   #userName {
     color: #000;
@@ -105,50 +92,48 @@
     display: block;
     color: #000; }
 
+  p {
+    line-height: 1.49em;
+    background: cornflowerblue;
+    color: white;
+    margin-bottom: auto;
+    padding-left: 16px; }
+
   /* start of the navbar styling ===================*/
-  .nav > li {
+  .nav li {
     position: relative;
     display: block;
     background: #E7C336;
     width: 100%;
-    /* float: right; */
     margin-left: 134px;
     font-size: .7em; }
 
   .navbar {
     position: fixed; }
-
-  .navbar-header {
-    background: #E7C336; }
-
-  .navbar-default .navbar-brand {
-    color: snow; }
-
-  .navbar-default .navbar-toggle {
-    border-color: transparent; }
-
-  .navbar a {
-    color: #fff; }
+    .navbar .navbar-default {
+      color: snow; }
+      .navbar .navbar-default .navbar-toggle {
+        border-color: transparent; }
+    .navbar .navbar-header {
+      background: #E7C336; }
+    .navbar .navbar-toggle {
+      margin-top: 6px; }
+    .navbar .navbar-form {
+      border-color: #e7e7e7;
+      width: 80%;
+      height: 100px;
+      float: right;
+      position: fixed; }
+    .navbar .navbar-collapse {
+      padding: 0px; }
+    .navbar a {
+      color: #fff; }
 
   #border {
     border-color: white;
     color: white; }
-
-  #border:hover {
-    color: black; }
-
-  .navbar-toggle {
-    margin-top: 6px; }
-
-  .navbar-collapse {
-    padding: 0px; }
-
-  .navbar-default .navbar-collapse, .navbar-default .navbar-form {
-    border-color: #e7e7e7;
-    width: 80%;
-    height: 100px;
-    float: right;
-    position: fixed; }
+    #border:hover {
+      color: black; }
 
   /* reseting boostrap form-controls */
   .form-control {
@@ -169,24 +154,16 @@
     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; }
 
-  p {
-    line-height: 1.49em;
-    background: cornflowerblue;
-    color: white;
-    margin-bottom: auto;
-    padding-left: 16px; }
-
   #album {
     width: 100%;
     padding-top: 40px;
     height: 350px;
     font-weight: 200;
     font-variant: small-caps; }
-
-  #album img {
-    width: 60%;
-    height: 250px;
-    margin-top: 20px; }
+    #album img {
+      width: 60%;
+      height: 250px;
+      margin-top: 20px; }
 
   .recognized {
     text-align: center;
@@ -196,14 +173,13 @@
   .signUp {
     width: 90%;
     margin-left: 14px; }
-
-  .signUp a {
-    color: #E7C336;
-    display: block;
-    width: 100%;
-    margin-top: 12px;
-    font-size: 1em;
-    text-align: center; }
+    .signUp a {
+      color: #E7C336;
+      display: block;
+      width: 100%;
+      margin-top: 12px;
+      font-size: 1em;
+      text-align: center; }
 
   .form-control {
     width: 100%; }

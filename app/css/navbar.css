@@ -46,9 +46,8 @@ a {
   color: #000;
   text-decoration: none;
   font-weight: bold; }
-
-a:hover {
-  color: #444; }
+  a:hover {
+    color: #444; }
 
 .btn-default {
   color: #333;
@@ -98,6 +97,11 @@ nav {
   position: fixed;
   top: 0px;
   width: 100%; }
+  nav ul {
+    list-style: none; }
+    nav ul li {
+      float: left;
+      display: inline-block; }
 
 #secondNav {
   position: relative;
@@ -110,17 +114,6 @@ nav {
   height: 40px;
   background: #4C8FEC url(../img/menu-icon.png) center; }
 
-a:hover#menu-icon {
-  background-color: #444;
-  border-radius: 4px 4px 0 0; }
-
-ul {
-  list-style: none; }
-
-nav li {
-  float: left;
-  display: inline-block; }
-
 #side-menu li {
   float: right; }
 
@@ -131,21 +124,14 @@ nav li {
   width: 100%;
   overflow: auto;
   height: 100%; }
-
-.containLib li {
-  width: 200px; }
+  .containLib li {
+    width: 200px; }
 
 section {
   margin: 80px auto 40px;
   max-width: 980px;
   position: relative;
   padding: 20px; }
-
-h1 {
-  text-align: center;
-  font-size: 2em;
-  line-height: 1.15em;
-  margin: 20px 0; }
 
 .navbar-collapse {
   padding-right: 15px;
@@ -218,7 +204,12 @@ h1 {
   padding: 0 0 0 10px;
   height: 55px; }
 
-.nav > li > a {
+.navbar a {
+  color: #456; }
+.navbar:hover {
+  color: #226; }
+
+.nav li a {
   position: relative;
   display: block; }
 
@@ -227,15 +218,6 @@ h1 {
   background: rgba(0, 0, 0, 0.7);
   color: white;
   border-color: rgba(0, 0, 0, 0.7); }
-
-.navbar a {
-  color: #456; }
-
-.navbar a:hover {
-  color: #226; }
-
-h2 {
-  color: black; }
 
 p {
   line-height: 1.45em;

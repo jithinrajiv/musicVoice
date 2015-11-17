@@ -22,10 +22,6 @@ myApp.controller("webGLController", function($scope) {
 		gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 		console.log("colorChange1");
 	
-	h1.style.color = '#000';
-	h2.style.color = '#000';
-	tag.style.color = '#000';
-
 	};
 
 	var random = Math.random();
@@ -34,9 +30,6 @@ myApp.controller("webGLController", function($scope) {
     	gl.enable(gl.DEPTH_TEST);
 		gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 		console.log("colorChange1");
-		h1.style.color = '#fff';
-		h2.style.color = '#fff';
-		tag.style.color = '#fff';
 	};
 
 	$scope.colorChange2 = function(){
@@ -44,9 +37,6 @@ myApp.controller("webGLController", function($scope) {
     	gl.enable(gl.DEPTH_TEST);
 		gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 		console.log("colorChange1");
-		h1.style.color = '#fff';
-		h2.style.color = '#fff';
-		tag.style.color = '#fff';
 	};
 
 
