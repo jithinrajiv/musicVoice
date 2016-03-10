@@ -1,10 +1,13 @@
 /*media Querries */
 @media (max-width: 460px) {
+  .navbar-default .navbar-brand {
+    color: white; }
+
   button#listen {
     width: 267px;
     /* align-items: flex-start; */
     /* position: absolute; */
-    margin-left: 70px;
+    margin-left: 45px;
     border-radius: 2px;
     border: none;
     color: white;
@@ -43,11 +46,11 @@
     color: #E7C336; }
 
   #miniMenu {
-    height: 63px;
+    height: 80px;
     width: 15%;
     background: #F08062;
     width: 15%;
-    float: left; }
+    float: right; }
 
   /* glpyh icons */
   .glyphicon {
