@@ -1,5 +1,18 @@
 /*media Querries */
 @media (max-width: 460px) {
+  button#listen {
+    width: 267px;
+    /* align-items: flex-start; */
+    /* position: absolute; */
+    margin-left: 70px;
+    border-radius: 2px;
+    border: none;
+    color: white;
+    background-color: #6495ed;
+    font-size: 20px;
+    height: 60px;
+    margin-top: 79px; }
+
   canvas {
     background: white; }
 
@@ -30,10 +43,11 @@
     color: #E7C336; }
 
   #miniMenu {
-    height: 50px;
+    height: 63px;
     width: 15%;
-    background: #f08080;
-    float: right; }
+    background: #F08062;
+    width: 15%;
+    float: left; }
 
   /* glpyh icons */
   .glyphicon {
@@ -93,10 +107,10 @@
     color: #000; }
 
   p {
-    line-height: 1.49em;
+    line-height: 1.3em;
     background: cornflowerblue;
     color: white;
-    margin-bottom: auto;
+    margin: 0px;
     padding-left: 16px; }
 
   /* start of the navbar styling ===================*/

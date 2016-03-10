@@ -122,6 +122,12 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
       $scope.annyang.init($scope.commands);
       $scope.annyang.start();
 
+
+      var listen = document.getElementById('listen').style.background = "#F08062";
+
+      var element = document.getElementById("listen");
+      element.innerHTML = "Listening";
+
       ($scope.annyang.addCallback = function(error) {
             $scope.communicateAction(error,'delayed');
       });

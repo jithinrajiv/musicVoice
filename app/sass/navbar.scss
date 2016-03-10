@@ -25,6 +25,15 @@ a {
 }
 }
 
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
+    border: 1px solid whitesmoke;
+}
+
+.navbar-default .navbar-brand {
+    color: black;
+}
+
 .btn-default {
     color: #333;
     background-color: #fff;
@@ -137,13 +146,16 @@ section {
 }
 
 /* when hiding the picture */
-.ng-hide-add         { animation:0.5s lightSpeedOut ease; }
+.ng-hide-add{
+ animation:0.5s lightSpeedOut ease;
+}
 
 /* when showing the picture */
-.ng-hide-remove      { animation:0.5s flipInX ease; }
+.ng-hide-remove{
+  animation:0.5s flipInX ease;
+}
 
-/* ANIMATIONS (FROM ANIMATE.CSS) ======================== */
-/* flip in */
+/* flip in animation*/
 @keyframes flipInX {
   0% {
     transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
@@ -180,17 +192,6 @@ section {
 }
 
 /* light speed out */
-@keyframes lightSpeedOut {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translate3d(100%, 0, 0) skewX(30deg);
-    transform: translate3d(100%, 0, 0) skewX(30deg);
-    opacity: 0;
-  }
-}
 
 @keyframes lightSpeedOut {
   0% {
