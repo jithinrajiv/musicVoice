@@ -1,4 +1,4 @@
-myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray,$firebaseObject,$location,Spotify,$http) {  
+myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray,$firebaseObject,$location,Spotify,$http) {
 
   var ref = new Firebase("https://musicwebgl.firebaseIO.com");
   // create an instance of the authentication service
@@ -11,7 +11,7 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
 //Facebook username
 
 //Text Commands =====================================================
-  $scope.said = "Say the word 'play' then the name of your song or artist to start";
+  $scope.said = "Say the word 'play song' then the name of your song or artist to start";
 
   $scope.helloWorld = function() {
     $scope.said = "Hello world!";
@@ -49,7 +49,7 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
                     var albumCover = document.getElementById('album');
                     albumCover.innerHTML = '<div>Playing ' + track.name + ' by ' + track.artists[0].name + '</div><img src="' + track.album.images[1].url + '">';
                     console.log(albumCover)
-                } 
+                }
         });
     }
     $scope.playSong = function (songName, artistName) {
@@ -73,8 +73,48 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
         rec.innerHTML = '<div class="recognized"><div>' + text + '</div></div>';
     }
 
-//Siri like Commands 
+//Siri like Commands
   $scope.commands = {
+//Spotifiy Api track recognitions=================
+    'stop': function () {
+        audio.pause();
+    },
+    'stop song': function () {
+        audio.pause();
+    },
+    'stop track': function () {
+        audio.pause();
+    },
+    'play': function () {
+        audio.play();
+    },
+    'play track *song': function (song) {
+      $scope.recongized('Play track ' + song);
+      $scope.playSong(song);
+    },
+    'play *song by *artist': function (song, artist) {
+      $scope.recongized('Play song ' + song + ' by ' + artist);
+      $scope.playSong(song, artist);
+      console.log(song)
+    },
+    'play song *song': function (song) {
+      $scope.recongized('Play song ' + song);
+      $scope.playSong(song);
+      console.log(song)
+    },
+    'play *:song': function (song) {
+      $scope.recongized('Play ' + song);
+      $scope.playSong(song);
+      console.log(song)
+    },
+    ':nomatch': function (message) {
+      $scope.recongized(message);
+      $scope.communicateAction('Sorry, I don\'t understand this action');
+  }
+  };
+  var recognition = new webkitSpeechRecognition();
+
+  recognition.commands = {
 //Spotifiy Api track recognitions=================
     'stop': function () {
         audio.pause();
@@ -115,12 +155,37 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
 
   $scope.annyang = annyang;
 
-  $scope.annyang.debug();
+  $scope.recognition = annyang;
+
+  // Tell KITT the command to use to start listening
+  SpeechKITT.setStartCommand(function() {
+    $scope.recognition.init(recognition.commands);
+      $scope.recognition.start();
+
+
+  });
+
+  // Tell KITT the command to use to abort listening
+  SpeechKITT.setAbortCommand(function() {recognition.abort()});
+
+  // Register KITT's recognition start event with the browser's Speech Recognition
+  recognition.addEventListener('start', SpeechKITT.onStart);
+
+  // Register KITT's recognition end event with the browser's Speech Recognition
+  recognition.addEventListener('end', SpeechKITT.onEnd);
+
+  // Define a stylesheet for KITT to use
+  SpeechKITT.setStylesheet('//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/0.3.0/themes/flat.css');
+
+  // Render KITT's interface
+  SpeechKITT.vroom(); // SpeechKITT.render() does the same thing, but isn't as much fun!
+
 
 
   $scope.listen = function() {
       $scope.annyang.init($scope.commands);
       $scope.annyang.start();
+
 
 
       var listen = document.getElementById('listen').style.background = "#F08062";
@@ -133,7 +198,7 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
       });
 
     }
-  
+
 
   // Spotify.search('Drake', 'artist').then(function (data,$scope) {
   //   var audioObject = null;
@@ -148,6 +213,6 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
 //   audioObject.play();
 //   // console.log(data.preview_url)
 // });
- 
+
 
 });
