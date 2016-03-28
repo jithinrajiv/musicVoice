@@ -10,7 +10,6 @@ body {
   color: #000;
 }
 
-
 a {
   color: #000;
   text-decoration: none;
@@ -21,11 +20,19 @@ a {
 }
 }
 
-#username{
-  line-height: 1.45em;
+#recongized{
+  font-size: 22px;
+  margin-top: 40px;
+}
+
+#conversation{
+  font-size: 22px;
+}
+#username {
+    line-height: 1.45em;
     float: right;
+    font-size: 1.5em;
     margin-right: 10px;
-    color: black;
 }
 section {
 
@@ -132,6 +139,13 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-weight: 500;
     line-height: 1.1;
     color: black;
+    width: 100%;
+    text-align: center;
+}
+
+h1 ,.h1{
+  float:left;
+  font-size: 2.3em;
 }
 /* webGl full screenSize */
 
@@ -143,11 +157,15 @@ canvas{
 	height:100%;
 	min-height:100%;
 }
+.adjust{
+  margin-top: 100px;
+}
 
 #album{
     width:100%;
     padding-top:40px;
     height:350px;
+    font-size: 22px;
     text-align: center;
 }
 .recognized{

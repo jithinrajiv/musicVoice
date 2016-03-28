@@ -47,7 +47,7 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
                     $scope.album = track.album.images[1].url;
 
                     var albumCover = document.getElementById('album');
-                    albumCover.innerHTML = '<div>Playing ' + track.name + ' by ' + track.artists[0].name + '</div><img src="' + track.album.images[1].url + '">';
+                    albumCover.innerHTML = '<div class="adjust"><img src="' + track.album.images[1].url + '"><p>Playing ' + track.name + ' by ' + track.artists[0].name + '</p></div>';
                     console.log(albumCover)
                 }
         });
@@ -60,18 +60,18 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
         $scope.searchTracks(query);
     }
 
-    $scope.communicateAction = function(text) {
-        var rec = document.getElementById('conversation');
-        rec.innerHTML = '<div class="action">' + text + '</div>';
-    }
+    // $scope.communicateAction = function(text) {
+    //     var rec = document.getElementById('conversation');
+    //     rec.innerHTML = '<div class="action">' + text + '</div>';
+    // }
 
 
     $scope.trySong = $scope.communicateAction;
 
-    $scope.recongized = function(text) {
-        var rec = document.getElementById('recongized');
-        rec.innerHTML = '<div class="recognized"><div>' + text + '</div></div>';
-    }
+    // $scope.recongized = function(text) {
+    //     var rec = document.getElementById('recongized');
+    //     rec.innerHTML = '<div class="recognized"><div>' + text + '</div></div>';
+    // }
 
 //Siri like Commands
   $scope.commands = {
@@ -89,26 +89,26 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
         audio.play();
     },
     'play track *song': function (song) {
-      $scope.recongized('Play track ' + song);
+      // $scope.recongized('Play track ' + song);
       $scope.playSong(song);
     },
     'play *song by *artist': function (song, artist) {
-      $scope.recongized('Play song ' + song + ' by ' + artist);
+      // $scope.recongized('Play song ' + song + ' by ' + artist);
       $scope.playSong(song, artist);
       console.log(song)
     },
     'play song *song': function (song) {
-      $scope.recongized('Play song ' + song);
+      // $scope.recongized('Play song ' + song);
       $scope.playSong(song);
       console.log(song)
     },
     'play *:song': function (song) {
-      $scope.recongized('Play ' + song);
+      // $scope.recongized('Play ' + song);
       $scope.playSong(song);
       console.log(song)
     },
     ':nomatch': function (message) {
-      $scope.recongized(message);
+      // $scope.recongized(message);
       $scope.communicateAction('Sorry, I don\'t understand this action');
   }
   };
@@ -129,26 +129,26 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
         audio.play();
     },
     'play track *song': function (song) {
-      $scope.recongized('Play track ' + song);
+      // $scope.recongized('Play track ' + song);
       $scope.playSong(song);
     },
     'play *song by *artist': function (song, artist) {
-      $scope.recongized('Play song ' + song + ' by ' + artist);
+      // $scope.recongized('Play song ' + song + ' by ' + artist);
       $scope.playSong(song, artist);
       console.log(song)
     },
     'play song *song': function (song) {
-      $scope.recongized('Play song ' + song);
+      // $scope.recongized('Play song ' + song);
       $scope.playSong(song);
       console.log(song)
     },
     'play *:song': function (song) {
-      $scope.recongized('Play ' + song);
+      // $scope.recongized('Play ' + song);
       $scope.playSong(song);
       console.log(song)
     },
     ':nomatch': function (message) {
-      $scope.recongized(message);
+      // $scope.recongized(message);
       $scope.communicateAction('Sorry, I don\'t understand this action');
   }
   };
@@ -165,7 +165,7 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
 
   });
 
-SpeechKITT.setInstructionsText("Say Play song Followed by the name of your song to listen to it");
+SpeechKITT.setInstructionsText("Say Play song and then the name of your song!");
   // Tell KITT the command to use to abort listening
   SpeechKITT.setAbortCommand(function() {recognition.abort()});
 
