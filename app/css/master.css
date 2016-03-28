@@ -74,6 +74,7 @@ header {
 button#facebook {
   border-color: #2d5073;
   background-color: #3b5998;
+  color: #fff;
   background-image: url(https://icons.iconarchive.com/icons/danleech/simple/512/facebook-icon.png); }
 
 #musicShare {
@@ -87,6 +88,12 @@ label {
 
 .border {
   border: 2px solid white; }
+
+.signin-block {
+  margin-top: 50px; }
+
+.signin-container {
+  width: 100%; }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: Merriweather;

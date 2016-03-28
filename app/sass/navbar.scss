@@ -6,7 +6,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 $mainColor:  #f9f9f9;
 
-body { 
+body {
 	font-size: 1.05em;
 	line-height: 1.25em;
 	font-family: Helvetica Neue, Helvetica, Arial;
@@ -32,8 +32,13 @@ a {
 
 .navbar-default .navbar-brand {
     color: black;
+		font-size: 32px;
 }
 
+.hideshow{
+margin-top: 15px;
+  float:left;
+}
 .btn-default {
     color: #333;
     background-color: #fff;
@@ -44,10 +49,11 @@ a {
     margin-top: 12px;
     height: 45px;
 }
-.form-group a{
-	margin-left:19%;
-	margin-top:20px;
-	display:block;
+.form-group a {
+    margin-left: 19%;
+    margin-top: 20px;
+    color: slateblue;
+    display: block;
 }
 label{
 	color:#000;
@@ -92,6 +98,7 @@ nav {
     li {
       float:left;
       display: inline-block;
+			padding-left: 15px;
     }
   }
 }
@@ -220,6 +227,7 @@ section {
 
 .navbar{
 
+
   a{
     color:#456;
   }&:hover{
@@ -243,7 +251,9 @@ section {
 	border-color:rgba(0,0,0,.7);
 }
 
-
+.navbar-logo{
+	margin-top: 5px;
+}
 
 
 p {
@@ -251,7 +261,6 @@ p {
 	line-height: 1.45em;
 	margin-bottom: 20px;
 	color:black;
-  text-align: center;
 
 }
 

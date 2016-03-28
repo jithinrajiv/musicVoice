@@ -54,7 +54,12 @@ a {
   border: 1px solid whitesmoke; }
 
 .navbar-default .navbar-brand {
-  color: black; }
+  color: black;
+  font-size: 32px; }
+
+.hideshow {
+  margin-top: 15px;
+  float: left; }
 
 .btn-default {
   color: #333;
@@ -69,6 +74,7 @@ a {
 .form-group a {
   margin-left: 19%;
   margin-top: 20px;
+  color: slateblue;
   display: block; }
 
 label {
@@ -108,7 +114,8 @@ nav {
     list-style: none; }
     nav ul li {
       float: left;
-      display: inline-block; }
+      display: inline-block;
+      padding-left: 15px; }
 
 #secondNav {
   position: relative;
@@ -218,11 +225,13 @@ section {
   color: white;
   border-color: rgba(0, 0, 0, 0.7); }
 
+.navbar-logo {
+  margin-top: 5px; }
+
 p {
   line-height: 1.45em;
   margin-bottom: 20px;
-  color: black;
-  text-align: center; }
+  color: black; }
 
 #messager {
   float: left;

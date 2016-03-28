@@ -1,25 +1,13 @@
-<div id="miniMenu" ng-click="ToggleBar = !ToggleBar">
- <span class="glyphicon glyphicon-th-list"></span>
-  <div id="sidebar" ng-show="ToggleBar">
-    <button  ng-click="colorChange()" class="submitBtn" type="submit">White</button>
-
-    <button ng-click="colorChange2()" class="submitBtn" type="submit">Brown</button>
-
-    <button ng-click="colorChange1()" class="submitBtn" type="submit">Random</button>
-  </div>
-</div>
-
 <!-- Talk reconigition -->
 <div id="musicContainer" ng-model="authData">
       <p>{[{authData.password.email || authData.facebook.displayName}]}</p>
 </div>
-<div> 
+<div>
 <p>
-	Click the play button then say 'Play' to initiate followed by the song you want to listen to.
+	Click the play button then say 'Play' followed by your song title.
 </p>
 </div>
 <button id="listen" ng-click="listen()">Play</button>
 <div id="album" ng-model="recongized"></div>
 <div ng-model="recongized" id="conversation"></div>
 <div ng-model="recongized" id="recongized"></div>
-
