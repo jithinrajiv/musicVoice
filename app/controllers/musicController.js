@@ -165,6 +165,7 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
 
   });
 
+SpeechKITT.setInstructionsText("Say Play song Followed by the name of your song to listen to it");
   // Tell KITT the command to use to abort listening
   SpeechKITT.setAbortCommand(function() {recognition.abort()});
 
@@ -175,7 +176,7 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
   recognition.addEventListener('end', SpeechKITT.onEnd);
 
   // Define a stylesheet for KITT to use
-  SpeechKITT.setStylesheet('//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/0.3.0/themes/flat.css');
+  SpeechKITT.setStylesheet('//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/0.3.0/themes/flat-clouds.css');
 
   // Render KITT's interface
   SpeechKITT.vroom(); // SpeechKITT.render() does the same thing, but isn't as much fun!
@@ -186,12 +187,6 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
       $scope.annyang.init($scope.commands);
       $scope.annyang.start();
 
-
-
-      var listen = document.getElementById('listen').style.background = "#F08062";
-
-      var element = document.getElementById("listen");
-      element.innerHTML = "Listening";
 
       ($scope.annyang.addCallback = function(error) {
             $scope.communicateAction(error,'delayed');

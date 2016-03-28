@@ -122,13 +122,6 @@
     display: block;
     color: #000; }
 
-  p {
-    line-height: 1.3em;
-    background: cornflowerblue;
-    color: white;
-    margin: 0px;
-    padding-left: 16px; }
-
   /* start of the navbar styling ===================*/
   .nav li {
     position: relative;

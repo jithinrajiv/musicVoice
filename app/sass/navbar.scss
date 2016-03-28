@@ -25,13 +25,17 @@ a {
 }
 }
 
+.navbar-default {
+    background-color: #000;
+    border-color: #e7e7e7;
+}
+
 .navbar-default .navbar-toggle .icon-bar {
-    background-color: white;
-    border: 1px solid whitesmoke;
+    background-color: #000;
 }
 
 .navbar-default .navbar-brand {
-    color: black;
+    color: grey;
 		font-size: 32px;
 }
 

@@ -1,13 +1,11 @@
 <!-- Talk reconigition -->
 <div id="musicContainer" ng-model="authData">
-      <p>{[{authData.password.email || authData.facebook.displayName}]}</p>
+      <p id="username">Welcome, {[{authData.password.email || authData.facebook.displayName}]}</p>
 </div>
-<div>
-<p>
-	Click the play button then say 'Play' followed by your song title.
-</p>
-</div>
-<button id="listen" ng-click="listen()">Play</button>
+<h1>
+	Press the button below to play your song
+</h1>
+
 <div id="album" ng-model="recongized"></div>
 <div ng-model="recongized" id="conversation"></div>
 <div ng-model="recongized" id="recongized"></div>
