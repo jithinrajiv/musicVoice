@@ -47,7 +47,7 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
                     $scope.album = track.album.images[1].url;
 
                     var albumCover = document.getElementById('album');
-                    albumCover.innerHTML = '<div class="adjust"><img src="' + track.album.images[1].url + '"><p>Playing ' + track.name + ' by ' + track.artists[0].name + '</p></div>';
+                    albumCover.innerHTML = '<div class="adjust"><img src="' + track.album.images[1].url + '"><p class="currentSong">Playing ' + track.name + ' by ' + track.artists[0].name + '</p></div>';
                     console.log(albumCover)
                 }
         });

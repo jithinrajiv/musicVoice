@@ -109,7 +109,6 @@ label {
   width: 100%; }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: Merriweather;
   font-weight: 500;
   line-height: 1.1;
   color: black;
@@ -118,7 +117,15 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 h1, .h1 {
   float: left;
-  font-size: 2.3em; }
+  color: grey;
+  font-size: 3.4em;
+  font-weight: 100; }
+
+p.currentSong {
+  margin-top: 30px;
+  font-size: 2.4em;
+  color: darkgrey;
+  font-weight: 100; }
 
 /* webGl full screenSize */
 canvas {
