@@ -137,7 +137,7 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
       $scope.playSong(song, artist);
       console.log(song)
     },
-    'play song *song': function (song) {
+    'play *song': function (song) {
       // $scope.recongized('Play song ' + song);
       $scope.playSong(song);
       console.log(song)
@@ -165,7 +165,7 @@ myApp.controller("musicController", function($scope,$firebaseAuth,$firebaseArray
 
   });
 
-SpeechKITT.setInstructionsText("Say Play song and then the name of your song!");
+SpeechKITT.setInstructionsText("Say 'Play' then the name of your song to start.");
   // Tell KITT the command to use to abort listening
   SpeechKITT.setAbortCommand(function() {recognition.abort()});
 

@@ -2,16 +2,79 @@ $mainColor : rgba(100,200,200,.4);
 
 $mainColor1 : rgba(100,200,200,.7);
 
-$navbarColor : #E7C336;
+$navbarColor : #000;
 
 @media (max-width: 699px) {
 
+}
+
+@media (max-width: 1200px) and (orientation: portrait){
+#skitt-listening-box {
+     line-height: 0px;
+}
 }
 /*media Querries */
 @media (max-width: 460px) {
   .signin-container{
   }
 
+  div#skitt-listening-box {
+    font-size: 15px;
+    line-height: 0px;
+    height: 71px;
+}
+  span#skitt-listening-text__instructions {
+    margin-top: 38px;
+    font-size: 15px;
+    font-weight: 300;
+    float: left;
+}
+div#skitt-ui {
+    display: inline-block;
+    background-color: #ECF0F1;
+    z-index: 200;
+    border-radius: 25px;
+    position: fixed;
+    bottom: 150px;
+    left: 20px;
+    outline: none;
+    border: none;
+    box-shadow: rgba(0,0,0,0.2) 0px 4px 8px;
+    cursor: default;
+    font-family: Lato,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+}
+
+  #skitt-ui {
+      display: inline-block;
+      background-color: #ECF0F1;
+      z-index: 200;
+      border-radius: 25px;
+      position: fixed;
+      bottom: 100px;
+      left: 20px;
+      outline: none;
+      width: 90%;
+      border: none;
+      box-shadow: rgba(0,0,0,0.2) 0px 4px 8px;
+      cursor: default;
+      font-family: Lato,Helvetica,Arial,sans-serif;
+      font-size: 16px;
+  }
+  #skitt-toggle-button {
+      width: 125px;
+      position: absolute;
+      left: 120px;
+      top: 85px;
+      height: 125px;
+      background-position: 17.5px 15px;
+  }
+  p.currentSong {
+    margin-top: 30px;
+    font-size: 1.2em;
+    color: #a9a9a9;
+    font-weight: 100;
+}
 .navbar-default .navbar-brand {
     color: white;
 }
@@ -127,13 +190,12 @@ div#sidebar {
 }
 
 
-#userName {
-    color: #000;
-    font-size: 16px;
-    position: absolute;
-    top: 5px;
-    right: 11px;
-    z-index:2;
+#username {
+    line-height: 1.45em;
+    float: right;
+    font-size: 1.5em;
+    font-weight: 100;
+    margin-right: 10px;
 }
 
 .submitBtn {
@@ -150,10 +212,10 @@ div#sidebar {
 h1,h2,h3,h4{
     text-align:center;
     display:block;
-    color: #000;
+    color: darkgrey;
 }
 p {
-    
+
 }
 /* start of the navbar styling ===================*/
 .nav{
@@ -164,7 +226,7 @@ p {
         background: $navbarColor;
         width: 100%;
         margin-left: 134px;
-        font-size:.7em;
+        font-size:1.2em;
     }
 }
 .navbar{
@@ -180,6 +242,8 @@ p {
     }
     .navbar-toggle{
         margin-top:6px;
+        border: 0px;
+        color: white;
     }
     .navbar-form {
         border-color: #e7e7e7;
@@ -205,7 +269,13 @@ p {
     }
 }
 
-
+.navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+.navbar-default .navbar-toggle {
+    border-color: #ddd;
+    background-color: white;
+}
 /* reseting boostrap form-controls */
 .form-control {
     display: block;
